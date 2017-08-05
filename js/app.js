@@ -11,10 +11,15 @@ $(function() {
     }).done(function(resp) {
         background.attr("src", resp.hdurl);
         $(".apod-description h3").text(resp.title);
-        $(".apod-description p").text(resp.explanation);
+        $(".apod-p").text(resp.explanation);
         $(".apod-description span").text(resp.date);
+        var showDesc = $(".show-desc");
+        showDesc.show();
         sectionOne.show();
         loader.hide();
+        showDesc.on("click", function(event) {
+            $(".apod-p").toggle("slow");
+        })
     }).fail(function(error) {
         var errorMessage = $("<p>Loading failed. Check your Internet connection and try again</p>");
         loader.hide();

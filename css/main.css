@@ -9,10 +9,6 @@ body {
     background-color: #aaaeff;
 }
 
-.resizable-text {
-    font-size: 2.5vw;
-}
-
 .section-one {
     position: relative;
     display: none;
@@ -71,7 +67,6 @@ body {
     left: -100px;
     margin-right: 40px;
     padding: 20px;
-    transition: 0.5s all;
     opacity: 0;
     background-color: rgba(252, 240, 235, .7);
     border-radius: 10px;
@@ -79,8 +74,17 @@ body {
     transition: 2s ease;
 }
 
-.apod-description p {
-    font-size: 1vw;
+.apod-p {
+    margin-top: 10px;
+    padding: 20px;
+    background-color: rgba(252, 240, 235, .7);
+    border-radius: 10px;
+    transition: 2s ease;
+    display: none;
+}
+
+.show-desc {
+    display: none;
 }
 
 .section-one:hover .apod-description {
@@ -146,4 +150,5 @@ body {
 .show-more {
     width: 100%;
     height: 50px;
+    margin-bottom: 20px;
 }
