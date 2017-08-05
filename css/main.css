@@ -12,7 +12,7 @@ body {
 .section-one {
     position: relative;
     display: none;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .section-one-loader {
