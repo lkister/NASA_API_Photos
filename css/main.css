@@ -9,6 +9,10 @@ body {
     background-color: #aaaeff;
 }
 
+.resizable-text {
+    font-size: 2.5vw;
+}
+
 .section-one {
     position: relative;
     display: none;
@@ -73,6 +77,10 @@ body {
     border-radius: 10px;
     overflow: hidden;
     transition: 2s ease;
+}
+
+.apod-description p {
+    font-size: 1vw;
 }
 
 .section-one:hover .apod-description {

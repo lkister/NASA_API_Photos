@@ -5,11 +5,10 @@ $(function() {
     var loader = $(".section-one-loader");
     var nasaUrl = "https://api.nasa.gov/planetary/apod?api_key=mWZ0yH6G7iAdrnzep1CMSK6TwMSdLd0e4Ul7g32a";
     var marsPhotos = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=mWZ0yH6G7iAdrnzep1CMSK6TwMSdLd0e4Ul7g32a";
+
     $.ajax({
         url: nasaUrl,
     }).done(function(resp) {
-        // var index = Math.floor(Math.random() * resp.photos.length);
-        // background.attr("src", resp.photos[index].img_src);
         background.attr("src", resp.hdurl);
         $(".apod-description h3").text(resp.title);
         $(".apod-description p").text(resp.explanation);
@@ -22,12 +21,6 @@ $(function() {
         sectionOne.before(errorMessage);
         console.log(error);
     })
-
-    // $.ajax({
-    //     url: nasaUrl,
-    // }).done(function(resp) {
-    //     background.attr("src", resp.hdurl);
-    // })
 
     $.ajax({
         url: marsPhotos,
