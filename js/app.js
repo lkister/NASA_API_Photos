@@ -6,12 +6,17 @@ $(function() {
     var nasaUrl = "https://api.nasa.gov/planetary/apod?api_key=mWZ0yH6G7iAdrnzep1CMSK6TwMSdLd0e4Ul7g32a";
     var marsPhotos = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=mWZ0yH6G7iAdrnzep1CMSK6TwMSdLd0e4Ul7g32a";
     $.ajax({
-        url: marsPhotos,
+        url: nasaUrl,
     }).done(function(resp) {
-        var index = Math.floor(Math.random() * resp.photos.length);
-        background.attr("src", resp.photos[index].img_src);
+        // var index = Math.floor(Math.random() * resp.photos.length);
+        // background.attr("src", resp.photos[index].img_src);
+        background.attr("src", resp.hdurl);
+        $(".apod-description h3").text(resp.title);
+        $(".apod-description p").text(resp.explanation);
+        $(".apod-description span").text(resp.date);
         sectionOne.show();
         loader.hide();
+        console.log(resp);
     }).fail(function(error) {
         var errorMessage = $("<p>Loading failed. Check your Internet connection and try again</p>");
         loader.hide();
@@ -29,23 +34,33 @@ $(function() {
         url: marsPhotos,
     }).done(function(resp) {
         var counter = 6;
+        var container = $(".container");
+        var imageSmall = $(".image-small img");
         for (var i = 0; i < 6; i++) {
-            var image = $("<image class='mars-photo'>");
-            image.attr("src", resp.photos[i].img_src);
-            sectionTwo.append(image);
+            imageSmall.eq(i).attr("src", resp.photos[i].img_src);
+            $(".image-small-loader").hide();
+            $(".image-small").show();
         }
-        var button = $("<a class='btn btn-primary btn-lg'>Show more</a>");
-        sectionTwo.append(button);
-        sectionTwo.on("click", ".btn", function() {
-            console.log("działa");
+        var button = $("<a class='btn btn-primary btn-lg show-more'>Show more</a>");
+        container.append(button);
+        container.on("click", ".btn", function() {
             $(this).remove();
-            for (var i = counter; i < counter + 6; i++) {
-                var image = $("<image class='mars-photo'>");
-                image.attr("src", resp.photos[i].img_src);
-                sectionTwo.append(image);
+            var rows = $("<div class='row'></div>");
+            for (var i = 0; i < 3; i++) {
+                var columns = $("<div class='col-md-4 col-xs-12'></div>");
+                for (var j = 0; j < 2; j++) {
+                    var imageSmallCreate = $("<div class='image-small-visible thumbnail'></div>");
+                    var imageCreate = $("<img>");
+                    imageCreate.attr("src", resp.photos[counter].img_src);
+                    counter++;
+                    imageSmallCreate.append(imageCreate);
+                    imageSmallCreate.show();
+                    columns.append(imageSmallCreate);
+                }
+                rows.append(columns);
             }
-            counter += 6;
-            sectionTwo.append(button);
+            container.append(rows);
+            container.append(button);
         })
     })
 });
