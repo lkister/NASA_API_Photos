@@ -8,4 +8,4 @@ Used technologies:
 4. Bootstrap
 5. Ajax 
 
-### Powered by [NASA Open APIs] (https://api.nasa.gov/)
+### Powered by [NASA Open APIs](https://api.nasa.gov/)

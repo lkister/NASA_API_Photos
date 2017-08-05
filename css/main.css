@@ -82,6 +82,7 @@ body {
 
 .show-desc {
     display: none;
+    cursor: pointer;
 }
 
 .section-one:hover .apod-description {
