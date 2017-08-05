@@ -16,7 +16,6 @@ $(function() {
         $(".apod-description span").text(resp.date);
         sectionOne.show();
         loader.hide();
-        console.log(resp);
     }).fail(function(error) {
         var errorMessage = $("<p>Loading failed. Check your Internet connection and try again</p>");
         loader.hide();
