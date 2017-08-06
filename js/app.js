@@ -42,6 +42,10 @@ $(function() {
         container.append(button);
         container.on("click", ".btn", function() {
             $(this).remove();
+            // var imageSmallLoader = $("<div class='section-one-loader'></div>");
+            // var loaderSmall = $("<div class='loader'></div>");
+            // imageSmallLoader.append(loaderSmall);
+            // container.append(imageSmallLoader);
             var rows = $("<div class='row'></div>");
             for (var i = 0; i < 3; i++) {
                 var columns = $("<div class='col-md-4 col-xs-12'></div>");
@@ -58,6 +62,15 @@ $(function() {
             }
             container.append(rows);
             container.append(button);
-        })
+            $(".section-one-loader").hide("slow");
+        }).on("click", "img", function() {
+            var url = $(this).attr("src");
+            var imageFullScreen = $(".image-full-screen");
+            imageFullScreen.children().attr("src", url);
+            imageFullScreen.fadeIn("slow");
+            imageFullScreen.on("click", function() {
+                imageFullScreen.fadeOut("slow");
+            })
+        });
     })
 });

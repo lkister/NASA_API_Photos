@@ -56,6 +56,7 @@ body {
     width: 100%;
     border-radius: 30px;
     border: 3px solid #c3dff3;
+    cursor: pointer;
 }
 
 .apod-description {
@@ -76,7 +77,7 @@ body {
     padding: 20px;
     background-color: rgba(252, 240, 235, .7);
     border-radius: 10px;
-    transition: 2s ease;
+    /* transition: 2s ease; */
     display: none;
 }
 
@@ -113,10 +114,12 @@ body {
 
 .image-small {
     display: none;
+    cursor: pointer;
 }
 
 .image-small-visible {
     width: 100%;
+    cursor: pointer;
 }
 
 .image-small img {
@@ -135,4 +138,24 @@ body {
     width: 100%;
     height: 50px;
     margin-bottom: 20px;
+}
+
+.image-full-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.9);
+    display: none;
+    cursor: pointer;
+    /* transition: 2s ease; */
+}
+
+.image-full-screen img {
+    display: block;
+    margin: 0 auto;
+    height: 100%;
+    border: 2px solid #c3dff3;
 }
