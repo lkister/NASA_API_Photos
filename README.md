@@ -1,5 +1,7 @@
 # NASA_API_Photos
-## Check current working version [LINK](https://lkister.github.io/NASA_API_Photos/.)
+## [Click here for live preview](https://lkister.github.io/NASA_API_Photos/.)
+
+Simple webpage with Ajax (all data gathered from API)  
 
 Used technologies: 
 1. HTML5

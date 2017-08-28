@@ -65,8 +65,8 @@ $(function() {
             $(".section-one-loader").hide("slow");
         }).on("click", "img", function() {
             var url = $(this).attr("src");
-            var imageFullScreen = $(".image-full-screen");
-            imageFullScreen.children().attr("src", url);
+            var imageFullScreen = $(".image-full-screen-container");
+            $(".image-full-screen img").attr("src", url);
             imageFullScreen.fadeIn("slow");
             imageFullScreen.on("click", function() {
                 imageFullScreen.fadeOut("slow");

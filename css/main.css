@@ -9,6 +9,13 @@ body {
     background-color: #aaaeff;
 }
 
+.container-style {
+    background-color: #008fc5;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .section-one {
     position: relative;
     display: none;
@@ -28,9 +35,7 @@ body {
 
 .loader {
     border: 16px solid #f3f3f3;
-    /* Light grey */
     border-top: 16px solid #3498db;
-    /* Blue */
     border-radius: 50%;
     width: 120px;
     height: 120px;
@@ -95,7 +100,6 @@ body {
 .main-h1 {
     background-color: rgba(252, 240, 235, .7);
     padding: 20px;
-    border-radius: 20px;
     color: #83878b;
 }
 
@@ -140,22 +144,26 @@ body {
     margin-bottom: 20px;
 }
 
-.image-full-screen {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    z-index: 1;
-    background: rgba(255, 255, 255, 0.9);
+.image-full-screen-container {
+    display: flex;
+    justify-content: center;
     display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.9);
+    height: 100%;
+    width: 100%;
     cursor: pointer;
-    /* transition: 2s ease; */
+    overflow: scroll;
 }
 
+
+/* .image-full-screen {
+    z-index: 1;
+    overflow: scroll;
+} */
+
 .image-full-screen img {
-    display: block;
-    margin: 0 auto;
-    height: 100%;
-    border: 2px solid #c3dff3;
+    width: 100%;
 }
