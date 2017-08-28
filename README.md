@@ -1,5 +1,4 @@
-# NASA_API_Photos
-## [Click here for live preview](https://lkister.github.io/NASA_API_Photos/.)
+# NASA_API_Photoshttps://lkister.github.io/webpage_NASA_API_Photos/index.html)
 
 Simple webpage with Ajax (all data gathered from API)  
 
